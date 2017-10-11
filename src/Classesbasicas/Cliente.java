@@ -6,13 +6,17 @@
 package Classesbasicas;
 
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Pedro
  */
+@Entity
 public class Cliente extends Usuario {
-
+    
+    @Id
     private int id;
     private List<Pedido> pedido;
     private String cnpj;
