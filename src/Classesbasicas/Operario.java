@@ -5,11 +5,16 @@
  */
 package Classesbasicas;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Pedro
  */
+@Entity
 public class Operario extends Funcionario{
+    @Id
     private int id;
     private Double salariohora;
     private int qtdhoras;
