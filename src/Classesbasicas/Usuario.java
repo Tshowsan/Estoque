@@ -5,18 +5,36 @@
  */
 package Classesbasicas;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  *
  * @author Pedro
  */
-public class Usuario {
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Usuario implements Serializable {
+
+    @Column
     private String nome;
+    @Column
     private int idade;
+    @Column
     private String endereco;
+    @Column
     private String telefone;
+    @Column
     private String email;
+    @Id
     private String login;
+    @Column
     private String senha;
+    @Column
     private int niveldeaesso;
 
     /**

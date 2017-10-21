@@ -5,20 +5,39 @@
  */
 package Classesbasicas;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 /**
  *
  * @author Pedro
  */
+@Entity
 public class Produto {
+
+    @Id
     private int id;
+    @Column
     private String descricao;
+    @Column
     private String dataFabricasao;
+    @Column
     private String dataValidade;
+    @Column
     private Double valorUnitario;
+    @Column
     private Double valorLote;
+    @Column
     private int qtdmax;
+    @Column
     private int qtdmim;
+    @ManyToOne
     private Pedido pedido;
+    @ManyToOne
+    private Estoque estoque;
 
     /**
      * @return the id
@@ -145,5 +164,19 @@ public class Produto {
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
-    
+
+    /**
+     * @return the estoque
+     */
+    public Estoque getEstoque() {
+        return estoque;
+    }
+
+    /**
+     * @param estoque the estoque to set
+     */
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
+    }
+
 }

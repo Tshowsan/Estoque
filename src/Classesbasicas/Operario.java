@@ -5,6 +5,7 @@
  */
 package Classesbasicas;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -13,11 +14,13 @@ import javax.persistence.Id;
  * @author Pedro
  */
 @Entity
-public class Operario extends Funcionario{
-    @Id
-    private int id;
+public class Operario extends Funcionario {
+
+    @Column
     private Double salariohora;
+    @Column
     private int qtdhoras;
+    @Column
     private Double salario;
 
     /**
@@ -62,17 +65,4 @@ public class Operario extends Funcionario{
         this.salario = salario;
     }
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
 }

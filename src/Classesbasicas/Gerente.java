@@ -5,13 +5,19 @@
  */
 package Classesbasicas;
 
+import javax.persistence.Column;
+
 /**
  *
  * @author Pedro
  */
-public class Gerente extends Funcionario{
+public class Gerente extends Funcionario {
+
+    @Column
     private Double salario;
+    @Column
     private Double salarioInicial;
+    @Column
     private Double comissao;
 
     /**

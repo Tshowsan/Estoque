@@ -5,16 +5,29 @@
  */
 package Classesbasicas;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Pedro
  */
-public class Estoque {
-private List<Produto> produto;
-private int qtdmax;
-private int qtdatual;
+@Entity
+public class Estoque implements Serializable {
+
+    @Id
+    private int id;
+    @OneToMany
+    private List<Produto> produto;
+    @Column
+    private int qtdmax;
+    @Column
+    private int qtdatual;
 
     /**
      * @return the produto
@@ -56,5 +69,13 @@ private int qtdatual;
      */
     public void setQtdatual(int qtdatual) {
         this.qtdatual = qtdatual;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

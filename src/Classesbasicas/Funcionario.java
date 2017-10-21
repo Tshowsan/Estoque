@@ -5,12 +5,21 @@
  */
 package Classesbasicas;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  *
  * @author Pedro
  */
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Funcionario extends Usuario{
+    @Column
     private String matricula;
+    @Column
     private String cpf;
 
     /**

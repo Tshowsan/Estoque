@@ -5,16 +5,31 @@
  */
 package Classesbasicas;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Pedro
  */
-public class Pedido {
+@Entity
+public class Pedido implements Serializable {
+
+    @Id
     private String id;
+
+    @ManyToOne
     private Cliente cliente;
+    @Column
     private String data;
+
+    @OneToMany(mappedBy = "pedido")
     private List<Produto> produto;
 
     /**

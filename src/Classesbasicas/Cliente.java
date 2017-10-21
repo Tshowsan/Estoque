@@ -6,8 +6,11 @@
 package Classesbasicas;
 
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -15,10 +18,11 @@ import javax.persistence.Id;
  */
 @Entity
 public class Cliente extends Usuario {
-    
-    @Id
-    private int id;
+
+   
+    @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedido;
+    @Column
     private String cnpj;
 
     public Cliente(String cnpj) {
@@ -54,20 +58,6 @@ public class Cliente extends Usuario {
      */
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
-    }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
 }
